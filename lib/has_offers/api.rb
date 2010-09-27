@@ -15,15 +15,23 @@ module HasOffers
 
     API_SERVICE_HOST = 'https://api.hasoffers.com/Api'
     
-    # TODO - Load Auth from a YAML file as well
-    def initialize(authentication = {})
-      @authentication = authentication
+    # Initialize a HasOffers object with the authentication values
+    # This accepts
+    #   1. A string declaring a YAML file with the correct api_key and network_id
+    #   2. A hash containing the api_key and network_id
+    #   3. By default, if left empty, it will look for config/has_offer.yml file to declare the authentication
+    def initialize(authentication = nil)
+      if authentication.nil? || authentication.is_a?(String)
+        config_file = authentication.nil? ? 'config/has_offers.yml' : authentication
+        @authentication = YAML::load(IO.read(config_file)) if File.exists?(config_file)
+      elsif authentication.is_a?(Hash)
+        @authentication = authentication
+      end
       @default_params = { 'Format' => 'json',
                           'Service' => 'HasOffers',
                           'Version' => '2',
-                          'NetworkId' => authentication[:network_id],
-                          'NetworkToken' => authentication[:api_key] }
-      
+                          'NetworkId' => @authentication['network_id'],
+                          'NetworkToken' => @authentication['api_key'] }
       self.debug_mode = false
       self.test_mode = false
     end
