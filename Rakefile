@@ -5,10 +5,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "has_offers"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "jkongie@gmail.com"
-    gem.homepage = "http://github.com/jkongie/has_offers"
+    gem.summary = "A wrapper around the HasOffers API"
+    gem.description = "This gem is a wrapper around the HasOffers API. In order to use the API, your network must be on the Enterprise pricing plan or a Dedicated solution."
+    gem.email = "james.kong@sentia.com.au"
+    gem.homepage = "http://github.com/sentia/has_offers"
     gem.authors = ["jkongie"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
