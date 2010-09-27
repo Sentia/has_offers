@@ -1,5 +1,3 @@
-require 'httparty'
-
 %w(
 has_offers/api
 ).each do |lib|
