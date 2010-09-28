@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "has_offers.gemspec",
      "lib/has_offers.rb",
      "lib/has_offers/api.rb",
+     "lib/has_offers/response.rb",
      "spec/has_offers_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
