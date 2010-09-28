@@ -53,6 +53,7 @@ module HasOffers
       http = new_http uri
       raw_request = Net::HTTP::Get.new(uri.request_uri)
       http_response = http.request raw_request
+      Response.new http_response
     end
   end
   

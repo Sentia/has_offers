@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["jkongie"]
-  s.date = %q{2010-09-27}
+  s.date = %q{2010-09-28}
   s.description = %q{This gem is a wrapper around the HasOffers API. In order to use the API, your network must be on the Enterprise pricing plan or a Dedicated solution.}
   s.email = %q{james.kong@sentia.com.au}
   s.extra_rdoc_files = [
